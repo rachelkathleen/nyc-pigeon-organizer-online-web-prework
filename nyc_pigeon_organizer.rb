@@ -25,7 +25,9 @@ def nyc_pigeon_organizer(data)
     value.each do |key2, names|
       names.each do |name|
       #binding.pry
-      pigeon_list[name] = ||
+      pigeon_list[name] || = {}
+      pigeon_list[name][key] || = []
+      pigeon_list[name][key] << key.to_s
     end
   end
 pigeon_list
