@@ -20,17 +20,15 @@
 require 'pry'
 
 def nyc_pigeon_organizer(data)
-  pigeon_list = {}
-  data.each do |key, value|
-    value.each do |key2, names|
-      names.each do |name|
-      #binding.pry
-      pigeon_list[name] ||= {}
-      pigeon_list[name][key] ||= []
-      pigeon_list[name][key] << key.to_s
-      binding.pry
-      end
-    end
-  end
-pigeon_list
+   organized = {}
+   data.each do |trait, options|
+   options.each do |option, pigeons|
+   pigeons.each do |pigeon|
+       organized[pigeon] ||= {}
+       organized[pigeon][trait] ||= []
+       organized[pigeon][trait] << option.to_s
+       end
+     end
+   end
+   organized
 end
