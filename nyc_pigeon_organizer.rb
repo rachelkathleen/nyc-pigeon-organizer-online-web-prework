@@ -22,7 +22,8 @@ require 'pry'
 def nyc_pigeon_organizer(data)
   pigeon_list = {}
   data.each do |key, value|
-    value.collect do |key2, name|
+    value.each do |key2, names|
+      names.each do |name|
       #binding.pry
       pigeon_list[name] = ||
     end
